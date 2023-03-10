@@ -1,2 +1,4 @@
-FROM python:3.7-alpine
-CMD [ "python", "-c", "print('Hi there!')"]
+FROM anapsix/alpine-java
+LABEL maintainer="shanem@liatrio.com"
+COPY /target/spring-petclinic-1.5.1.jar /home/spring-petclinic-1.5.1.jar
+CMD ["python","-jar","/home/spring-petclinic-1.5.1.jar"]
