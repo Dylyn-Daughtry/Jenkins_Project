@@ -1,22 +1,14 @@
 pipeline {
     agent any  
-        
-    
     stages {
         stage('Gregory - Build Docker Image') {
             steps {
-                docker image pull nginx
-                touch Dockerfile
-                echo "FROM nginx" > Dockerfile
-                echo "RUN apt-get update && apt-get upgrade -y" >> Dockerfile
-                echo "EXPOSE 8081" >> Dockerfile
-                echo "CMD ["nginx", "-g", "daemon off;"]" >> Dockerfile
-                docker build -t simple_nginx .
+                docker build -t hello_there .
             }
         }
         stage('Gregory - Login to Dockerhub') {
             steps {
-                echo "Testing.."
+                echo 'Testing..'
                 
             }
         }
@@ -24,7 +16,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
-                echo "doing delivery stuff.."
+                echo 'doing delivery stuff..'
                 '''
             }
         }

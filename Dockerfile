@@ -1,4 +1,3 @@
-FROM nginx
+FROM python:3.7-alpine
 RUN apt-get update && apt-get upgrade -y
-EXPOSE 8081
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "python", "-c", "print('Hi there!')"]
