@@ -2,7 +2,6 @@ pipeline {
     agent any  
         
     
-    }
     stages {
         stage('Gregory - Build Docker Image') {
             steps {
