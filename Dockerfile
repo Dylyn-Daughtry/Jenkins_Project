@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java
-LABEL maintainer="shanem@liatrio.com"
-COPY /target/spring-petclinic-1.5.1.jar /home/spring-petclinic-1.5.1.jar
-CMD ["python","-jar","/home/spring-petclinic-1.5.1.jar"]
+FROM python
+RUN mkdir /tmp/pythonfiles
+COPY *.py /tmp/pythonfiles/Gregory.py
+CMD python /tmp/pythonFiles/Gregory.py
